@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 2rem;
     }
     a{
-        font-size: 1.1rem
+        font-size: 1.1rem;
     }
     span{
         font-weight: bold;
@@ -56,4 +56,4 @@ const GlobalStyle = createGlobalStyle`
 
 `
 
-export default GlobalStyle
+export default GlobalStyle;

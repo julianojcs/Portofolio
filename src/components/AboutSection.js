@@ -4,7 +4,7 @@ import { About, Description, Image, Hide } from '../styles'
 const AboutSection = () => {
     return (
         <About>
-            <div className="description">
+            <Description>
                 <Description>
                     <Hide>
                         <h2>We work to make</h2>
@@ -20,7 +20,7 @@ const AboutSection = () => {
                 </Description>
                 <p>Contact us for any photography or videography ideas that you have. We have professionals with amazing skills.</p>
                 <button>Contact Us</button>
-            </div>
+            </Description>
             <Image>
                 <img src={home1} alt="Guy with a camera" />
             </Image>
