@@ -1,8 +1,10 @@
 import React from 'react';
 import GlobalStyle from './components/GlobalStyle'
 import Nav from './components/Nav';
-import Stylednav from './components/Nav'
 import AboutUs from './pages/AboutUs'
+import ContactUs from './pages/CantactUs'
+import OurWork from './pages/OurWork'
+import { Switch, Route } from 'react-router-dom'
 
 function App() {
     console.log(React.version);
@@ -11,7 +13,15 @@ function App() {
         <div className="App">
             <GlobalStyle />
             <Nav />
-            <AboutUs />
+            <Route exact path="/" >
+                <AboutUs />
+            </Route>
+            <Route path="/work" >
+                <OurWork />
+            </Route>
+            <Route path="/contact" >
+                <ContactUs />
+            </Route>
         </div>
     );
 }
