@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import GlobalStyle from './components/GlobalStyle'
 import Nav from './components/Nav';
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import OurWork from './pages/OurWork'
-import { Switch, Route } from 'react-router-dom'
+import NotFound from './pages/NotFound'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
-function App() {
+function App( {history} ) {
     console.log(React.version);
-    
+    useEffect( () => {
+        console.log(history.location.pathname)
+    }, [history.location.pathname])
+
     return (
         <div className="App">
             <GlobalStyle />
@@ -17,6 +21,7 @@ function App() {
                 <Route exact path="/" component={AboutUs} />
                 <Route path="/work" component={OurWork} />
                 <Route path="/contact" component={ContactUs} />
+                <Route component={NotFound} />
                 {/* 
                 <Route exact path="/" >
                     <AboutUs />
@@ -33,4 +38,4 @@ function App() {
     );
 }
 
-export default App;
+export default withRouter(App);
