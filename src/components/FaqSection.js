@@ -1,62 +1,61 @@
 import styled from 'styled-components'
 import { About, Description, Image, Hide } from '../styles'
 import Toggle from "./Toggle";
+import { AnimateSharedLayout } from 'framer-motion'
+
+const faq = [
+    {
+        question: "How Do I Start",
+        answer: [
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet consectetur.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro."
+        ]
+    },
+    {
+        question: "Daily Schedule",
+        answer: [
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quo, perspiciatis quas ex facere eos.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro."
+        ]
+    },
+    {
+        question: "Difrerrent Payment Methods",
+        answer: [
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro."
+        ]
+    },
+    {
+        question: "What Products Do You Offer",
+        answer: [
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro."
+        ]
+    },
+    {
+        question: "How Do I Start",
+        answer: [
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro."
+        ]
+    }
+]
 
 const FaqSection = () => {
     return (
         <Faq>
             <h2>Any Questions <span>FAQ</span></h2>
-            <Toggle>
-                <div className="question">
-                    <h4>How Do I Start</h4>
-                    <div className="answer">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro.
-                        </p>
-                    </div>
-                </div>
-            </Toggle>
-            <div className="question">
-                <h4>Daily Schedule</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Difrerrent Payment Methods</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>What Products Do You Offer</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>How Do I Start</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+            <AnimateSharedLayout>
+                {faq.map((item, index) => (
+                    <Toggle question={item.question} key={index}>
+                        <div className="answer">
+                            {item.answer.map((p)=><p>{p}</p>)}
+                        </div>
+                    </Toggle>
+                ))}
+            </AnimateSharedLayout>
         </Faq>
     )
 }

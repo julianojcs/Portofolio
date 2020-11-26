@@ -53,6 +53,9 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.4rem;
         line-height: 150%;
     }
+    .answer>p{
+        padding: .25rem 0 !important;
+    }
 
 `
 
