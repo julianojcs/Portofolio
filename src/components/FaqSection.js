@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { About, Description, Image, Hide } from '../styles'
 import Toggle from "./Toggle";
 import { AnimateSharedLayout } from 'framer-motion'
+import { scrollReveal } from '../animation'
+import { UseScroll } from './useScroll'
 
 const faq = [
     {
@@ -44,14 +46,15 @@ const faq = [
 ]
 
 const FaqSection = () => {
+    const [element, controls] = UseScroll()
     return (
-        <Faq>
+        <Faq variants={scrollReveal} animate={controls} initial='hidden' ref={element}>
             <h2>Any Questions <span>FAQ</span></h2>
             <AnimateSharedLayout>
                 {faq.map((item, index) => (
                     <Toggle question={item.question} key={index}>
                         <div className="answer">
-                            {item.answer.map((p)=><p>{p}</p>)}
+                            {item.answer.map((p, index)=><p key={index}>{p}</p>)}
                         </div>
                     </Toggle>
                 ))}
