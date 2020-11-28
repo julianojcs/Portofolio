@@ -6,10 +6,10 @@ import teamwork from '../img/teamwork.svg'
 import styled from 'styled-components'
 import { About, Description, Image } from '../styles'
 import { scrollReveal } from '../animation'
-import { UseScroll } from './useScroll'
+import { useScroll } from './useScroll'
 
 const ServicesSetcion = () => {
-    const [element, controls] = UseScroll()
+    const [element, controls] = useScroll()
     return (
         <Services variants={scrollReveal} animate={controls} initial='hidden' ref={element}>
             <Description>
