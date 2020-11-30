@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Nav = () => {
     return (
@@ -7,13 +7,13 @@ const Nav = () => {
             <h1><Link id="logo" to="/">Capture</Link></h1>
             <ul>
                 <li>
-                    <Link to="/">1. About Us</Link>
+                    <NavLink exact to="/">1. About Us</NavLink>
                 </li>
                 <li>
-                    <Link to="/work">2. Our Work</Link>
+                    <NavLink exact to="/work">2. Our Work</NavLink>
                 </li>
                 <li>
-                    <Link to="/contact">3. Contact Us</Link>
+                    <NavLink exact to="/contact">3. Contact Us</NavLink>
                 </li>
             </ul>
         </StyledNav>
@@ -43,6 +43,10 @@ const StyledNav = styled.nav`
     li{
         padding-left: 10rem;
         position: relative;
+    }
+    .active{
+        text-decoration: underline white solid;
+        font-weight: bold;
     }
 `
 export default Nav
