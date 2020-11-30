@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 //Animation
 import { motion } from 'framer-motion'
-import { pageAnimation, fade, photoAnim, lineAnim, slider, sliderContainer, swoopAdoop } from '../animation'
+import { pageAnimation, fade, photoAnim, lineAnim, slider, sliderContainer } from '../animation'
 import { useScroll } from '../components/useScroll'
 
 const OurWork = () => {

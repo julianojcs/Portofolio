@@ -10,18 +10,26 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 // import { useLocation } from 'react-router-dom'
 //Animation
 import { AnimatePresence } from 'framer-motion'
+// import ScrollTop from './components/ScrollTop'
 
 function App( {history} ) {
     // const location = useLocation()
     const location = history.location
     console.log(React.version)
-    // useEffect( () => {
-    //     console.log(history.location.pathname)
-    // }, [history.location.pathname])
+
+    //ScrollTop
+    useEffect( () => {
+        console.log(history.location.pathname)
+        window.scroll({
+            top: 0,
+            left: 0
+        })
+    }, [location])
 
     return (
         <div className="App">
             <GlobalStyle />
+            {/* <ScrollTop /> */}
             <Nav />
             <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
