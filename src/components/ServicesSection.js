@@ -60,11 +60,19 @@ const Services = styled(About)`
         width: 70%;
         padding: 2rem 0 4rem 0;
     }
+    @media (max-width: 1300px) {
+        p{
+            width: 100%;
+        }
+    }
 `;
 
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 1300px) {
+        justify-content: center;
+    }
 `;
 
 const Card = styled.div`
@@ -80,6 +88,11 @@ const Card = styled.div`
         padding: 1rem;
         width: 50%
     }
+    @media (max-width: 540px) {
+        h3{
+            width: 100%;
+        }
+    }    
 `;
 
 export default ServicesSetcion

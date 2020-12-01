@@ -52,28 +52,48 @@ const ContactStyle = styled(motion.div)`
     padding: 5rem 10rem;
     color: #252525;
     min-height: 90vh;
+    @media (max-width: 1300px) {
+        padding: 2rem;
+        font-size: 1rem;
+    }
 `
 
 const Title = styled(motion.div)`
     margin-bottom: 4rem;
-    color: #000;    
+    color: #000;
+    @media (max-width: 1300px) {
+        margin-top: 5rem;
+    }
 `
 
 const Hide = styled.div`
+    display: flex;
     overflow: hidden;
 `
 
 const Circle = styled.div`
     border-radius: 50%;
     width: 3rem;
+    min-width: 3rem;
     height: 3rem;
     background-color: #353535;
+    @media (max-width: 600px) {
+        width: 1.5rem;
+        min-width: 1.5rem;
+        height: 1.5rem;
+    }
 `
 const Social = styled(motion.div)`
     display: flex;
+    width: fit-content;
     align-items: center;
     h2 {
         margin: 2rem;
+    }
+    @media (max-width: 600px) {
+        h2{
+            font-size: 2rem;
+        }
     }
 `
 

@@ -59,9 +59,18 @@ const Work = styled(motion.div)`
     h2{
         padding: 1rem 0rem;
     }
+    @media (max-width: 1300px) {
+        padding: 2rem;
+        h2{
+            font-size: 3rem;
+        }
+    }
 `
 const Movie = styled(motion.div)`
     padding-bottom: 10rem;
+    @media (max-width: 1300px) {
+        padding-bottom: 4rem;
+    }
     .line{
         height: 0.5rem;
         background: #23d997;
