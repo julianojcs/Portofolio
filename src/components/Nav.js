@@ -1,20 +1,24 @@
 import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
-import { lineAnim } from '../animation'
+// import { motion } from 'framer-motion'
 
 const Nav = () => {
+// const Nav = ({ location }) => {
     return (
         <StyledNav>
             <h1><Link id="logo" to="/">Capture</Link></h1>
             <ul>
                 <li>
                     <NavLink exact to="/">About Us</NavLink>
+                    {/* <Line transition={{duration:.5}} initial={{width: '0%'}} animate={{width: location.pathname === '/' ? '50%' : '0%'}}></Line> */}
                 </li>
                 <li>
                     <NavLink exact to="/work">Our Work</NavLink>
+                    {/* <Line transition={{duration:.5}} initial={{width: '0%'}} animate={{width: location.pathname === '/work' ? '50%' : '0%'}}></Line> */}
                 </li>
                 <li>
                     <NavLink exact to="/contact">Contact Us</NavLink>
+                    {/* <Line transition={{duration:.5}} initial={{width: '0%'}} animate={{width: location.pathname === '/contact' ? '50%' : '0%'}}></Line> */}
                 </li>
             </ul>
         </StyledNav>
@@ -94,4 +98,12 @@ const StyledNav = styled.nav`
         border-color: #D96ED4;
     }
 `
+// const Line = styled(motion.div)`
+// 	height: 0.3rem;
+// 	background: #23d997;
+// 	width: 0%;
+// 	position: absolute;
+// 	bottom: -80%;
+// 	left: 60%;
+// `;
 export default Nav

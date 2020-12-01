@@ -30,7 +30,7 @@ function App( {history} ) {
         <div className="App">
             <GlobalStyle />
             {/* <ScrollTop /> */}
-            <Nav />
+            <Nav location={location} />
             <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
                     <Route exact path="/" component={AboutUs} />
