@@ -18,13 +18,13 @@ function App( {history} ) {
     console.log(React.version)
 
     //ScrollTop
-    useEffect( () => {
-        console.log(history.location.pathname)
-        window.scroll({
-            top: 0,
-            left: 0
-        })
-    }, [location])
+    useEffect(() => {
+      console.log(history.location.pathname)
+      window.scroll({
+        top: 0,
+        left: 0
+      })
+    }, [history.location.pathname])
 
     return (
         <div className="App">
